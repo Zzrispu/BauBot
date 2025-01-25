@@ -1,8 +1,12 @@
 import os
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
 
-from config import TOKEN, OWNER_ID
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+OWNER_ID = os.getenv("OWNER_ID")
 
 bot = commands.Bot(command_prefix='🐢', intents=discord.Intents.all())
 bot.owner_id = OWNER_ID

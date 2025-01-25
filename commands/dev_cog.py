@@ -1,7 +1,11 @@
 import discord
 import os
 from discord.ext import commands
-from config import GUILD_ID
+from dotenv import load_dotenv
+
+load_dotenv()
+
+GUILD_ID = os.getenv("GUILD_ID")
 
 class DevCog(commands.Cog):
     def __init__(self, bot):
