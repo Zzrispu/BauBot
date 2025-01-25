@@ -25,7 +25,7 @@ class MC_Server(commands.Cog):
                         else:
                             motd = 'bruh...'
                         
-                        embed = discord.Embed(title='『Servidor do Baú』', description=f'*{motd}*')
+                        embed = discord.Embed(title='『Servidor do Baú』', description=f"*{motd}*")
                         embed.add_field(name='IP', value='147.185.221.17:36608', inline=True)
                         embed.add_field(name='Versão', value='1.20.1', inline=True)
                         embed.set_thumbnail(url=self.bot.user.avatar)
@@ -36,17 +36,17 @@ class MC_Server(commands.Cog):
                             players = ''
                             if len(response['players']['list']) > 0:
                                 for player in response['players']['list']:
-                                    players += f'{player['name_clean']}\n'
+                                    players += f"{player['name_clean']}\n"
                             else:
                                 players = 'Não há players online'
                             
-                            embed.add_field(name=f'Players {response['players']['online']}/{response['players']['max']}', value=players, inline=False)
+                            embed.add_field(name=f"Players {response['players']['online']}/{response['players']['max']}", value=players, inline=False)
                         else:
                             embed.color = 0xff0000
                             
                             embed.add_field(name='O servidor está offline', value='💻🔨🐒', inline=False)
                         
-                        embed.add_field(name='Última Atualização', value=f'<t:{round(datetime.now().timestamp())}:R>', inline=False)
+                        embed.add_field(name='Última Atualização', value=f"<t:{round(datetime.now().timestamp())}:R>", inline=False)
                         return embed
         
                     else:
@@ -64,7 +64,7 @@ class MC_Server(commands.Cog):
                 print(f'[ERROR] - HTTPException: {e}')
                 break
             except Exception as e:
-                print(f'[ERROR] - {e}')
+                print(f"[ERROR] - {e}")
                 break
             
 
